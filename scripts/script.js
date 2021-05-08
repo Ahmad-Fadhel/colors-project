@@ -1,5 +1,6 @@
 const hexCode = document.querySelectorAll(".hex-code");
 const randomBtn = document.getElementById("random");
+const colorDiv = document.querySelectorAll(".color");
 
 const generateCode = () => {
   let randomColor = "";
@@ -12,8 +13,19 @@ const generateCode = () => {
   return randomColor;
 };
 
+let arrayOfColors = () => {
+  let arrayOfColors = [];
+
+  for (let i = 0; i < 5; i++) {
+    arrayOfColors.push(`#${generateCode()}`);
+  }
+  return arrayOfColors;
+};
+
 randomBtn.addEventListener("click", () => {
   for (let i = 0; i < 5; i++) {
-    hexCode[i].innerText = `#${generateCode()}`;
+    const colorsArray = arrayOfColors();
+    hexCode[i].innerText = colorsArray[i];
+    colorDiv[i].style.backgroundColor = colorsArray[i];
   }
 });
