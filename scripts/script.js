@@ -84,6 +84,12 @@ saveBtn.addEventListener("click", ()=>{
   SavepopUpBackground.style.display = "block"
 })
 
+document.body.onkeyup = (e)=>{
+  if(e.keyCode == 83){
+    SavepopUpBackground.style.display = "block"
+  }
+}
+
 saveCloseBtn.addEventListener("click", ()=>{
   SavepopUpBackground.style.display = "none"
 })

@@ -109,16 +109,18 @@
     height: 40px;
     width: 40px;
     font-size: 20px;
-    margin-left: 412px;
+    margin-left: 410px;
     border: 1px solid transparent;
-    background-color: rgb(70, 70, 70);
-    color: red;
+    background-color: white;
+    color: rgb(70, 70, 70);
     border-radius: 0px 24px 0px 4px;
 }
 
 .closeBtn:active{
-    background-color: red;
-    color: rgb(70, 70, 70);
+    color: red;
+}
+.closeBtn:hover{
+    cursor: pointer;
 }
 
 #savePallete{
