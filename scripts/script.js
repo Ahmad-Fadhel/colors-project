@@ -1,6 +1,8 @@
 const hexCode = document.querySelectorAll(".hex-code");
 const randomBtn = document.getElementById("random");
 const colorDiv = document.querySelectorAll(".color");
+const copyingPopUp = document.getElementById("clipBoardPopUp")
+const changeLockIcon = document.querySelectorAll(".lockIcon")
 
 const generateCode = () => {
   let randomColor = "";
@@ -29,3 +31,27 @@ randomBtn.addEventListener("click", () => {
     colorDiv[i].style.backgroundColor = colorsArray[i];
   }
 });
+
+hexCode.forEach(oneHex =>{
+  oneHex.addEventListener("click", ()=>{
+    window.navigator.clipboard.writeText(oneHex.innerText)
+    copyingPopUp.style.display = "flex"
+    copyingPopUp.style.color = oneHex.innerText
+    setTimeout(()=>{
+        copyingPopUp.style.display = "none";
+    }, 1000);
+  })
+})
+
+changeLockIcon.forEach(oneLock =>{
+  oneLock.addEventListener("click", ()=>{
+    if(oneLock.classList.contains("fa-lock-open")){
+      oneLock.classList.remove("fa-lock-open");
+      oneLock.classList.add("fa-lock");
+    } else if (oneLock.classList.contains("fa-lock")){
+      oneLock.classList.add("fa-lock-open");
+      oneLock.classList.remove("fa-lock");
+    }
+  })
+})
+
