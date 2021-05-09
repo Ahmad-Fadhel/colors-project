@@ -37,6 +37,18 @@ randomBtn.addEventListener("click", () => {
   }
 });
 
+document.body.onkeyup = (e)=>{
+  if(e.keyCode == 32){
+    for (let i = 0; i < 5; i++) {
+      const colorsArray = arrayOfColors();
+      if(changeLockIcon[i].classList.contains("true")){
+        hexCode[i].innerText = colorsArray[i];
+        colorDiv[i].style.backgroundColor = colorsArray[i];
+      }
+    }
+  }
+}
+
 hexCode.forEach(oneHex =>{
   oneHex.addEventListener("click", ()=>{
     window.navigator.clipboard.writeText(oneHex.innerText)
