@@ -6,6 +6,9 @@ const changeLockIcon = document.querySelectorAll(".lockIcon")
 const saveBtn = document.getElementById("save")
 const SavepopUpBackground = document.getElementById("SavepopUpBackground")
 const saveCloseBtn = document.getElementById("saveCloseBtn")
+const libraryBtn = document.getElementById("library")
+const librarypopUpBackground = document.getElementById("librarypopUpBackground")
+const libraryCloseBtn = document.getElementById("libraryCloseBtn")
 
 const generateCode = () => {
   let randomColor = "";
@@ -92,4 +95,12 @@ document.body.onkeyup = (e)=>{
 
 saveCloseBtn.addEventListener("click", ()=>{
   SavepopUpBackground.style.display = "none"
+})
+
+libraryBtn.addEventListener("click", ()=>{
+  librarypopUpBackground.style.display = "block"
+})
+
+libraryCloseBtn.addEventListener("click", ()=>{
+  librarypopUpBackground.style.display = "none"
 })
