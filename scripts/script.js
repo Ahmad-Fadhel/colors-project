@@ -27,8 +27,10 @@ let arrayOfColors = () => {
 randomBtn.addEventListener("click", () => {
   for (let i = 0; i < 5; i++) {
     const colorsArray = arrayOfColors();
-    hexCode[i].innerText = colorsArray[i];
-    colorDiv[i].style.backgroundColor = colorsArray[i];
+    if(changeLockIcon[i].classList.contains("true")){
+      hexCode[i].innerText = colorsArray[i];
+      colorDiv[i].style.backgroundColor = colorsArray[i];
+    }
   }
 });
 
@@ -45,13 +47,30 @@ hexCode.forEach(oneHex =>{
 
 changeLockIcon.forEach(oneLock =>{
   oneLock.addEventListener("click", ()=>{
-    if(oneLock.classList.contains("fa-lock-open")){
-      oneLock.classList.remove("fa-lock-open");
-      oneLock.classList.add("fa-lock");
-    } else if (oneLock.classList.contains("fa-lock")){
-      oneLock.classList.add("fa-lock-open");
-      oneLock.classList.remove("fa-lock");
-    }
+    lockBackground(oneLock);
   })
 })
 
+const lockBackground = (locked)=>{
+  if(locked.classList.contains("fa-lock-open")){
+    locked.classList.remove("fa-lock-open");
+    locked.classList.add("fa-lock");
+    locked.classList.remove("true");
+    locked.classList.add("false");
+  } else if (locked.classList.contains("fa-lock")){
+    locked.classList.add("fa-lock-open");
+    locked.classList.remove("fa-lock");
+    locked.classList.remove("false");
+    locked.classList.add("true");
+  }
+}
+
+// const changeColorFalse = ()=>{
+//   colorDiv.forEach((oneColorDiv)=>{
+//     const singleHexCode = document.querySelector(".hex-code");
+//     const LockIcon = document.querySelector(".lockIcon")
+//     if(LockIcon.classList.contains("fa-lock")){
+//        oneColorDiv.style.backgroundColor = `#${singleHexCode.innerText}`
+//     }
+//   })
+// }
