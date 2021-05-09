@@ -29,3 +29,9 @@ randomBtn.addEventListener("click", () => {
     colorDiv[i].style.backgroundColor = colorsArray[i];
   }
 });
+
+hexCode.forEach(oneHex =>{
+  oneHex.addEventListener("click", ()=>{
+    window.navigator.clipboard.writeText(oneHex.innerText)
+  })
+})
