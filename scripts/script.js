@@ -3,6 +3,9 @@ const randomBtn = document.getElementById("random");
 const colorDiv = document.querySelectorAll(".color");
 const copyingPopUp = document.getElementById("clipBoardPopUp")
 const changeLockIcon = document.querySelectorAll(".lockIcon")
+const saveBtn = document.getElementById("save")
+const SavepopUpBackground = document.getElementById("SavepopUpBackground")
+const saveCloseBtn = document.getElementById("saveCloseBtn")
 
 const generateCode = () => {
   let randomColor = "";
@@ -65,12 +68,10 @@ const lockBackground = (locked)=>{
   }
 }
 
-// const changeColorFalse = ()=>{
-//   colorDiv.forEach((oneColorDiv)=>{
-//     const singleHexCode = document.querySelector(".hex-code");
-//     const LockIcon = document.querySelector(".lockIcon")
-//     if(LockIcon.classList.contains("fa-lock")){
-//        oneColorDiv.style.backgroundColor = `#${singleHexCode.innerText}`
-//     }
-//   })
-// }
+saveBtn.addEventListener("click", ()=>{
+  SavepopUpBackground.style.display = "block"
+})
+
+saveCloseBtn.addEventListener("click", ()=>{
+  SavepopUpBackground.style.display = "none"
+})
