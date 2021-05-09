@@ -30,7 +30,7 @@ let arrayOfColors = () => {
   return arrayOfColors;
 };
 
-randomBtn.addEventListener("click", () => {
+const randomizeColor = ()=>{
   for (let i = 0; i < 5; i++) {
     const colorsArray = arrayOfColors();
     if(changeLockIcon[i].classList.contains("true")){
@@ -38,17 +38,15 @@ randomBtn.addEventListener("click", () => {
       colorDiv[i].style.backgroundColor = colorsArray[i];
     }
   }
+}
+
+randomBtn.addEventListener("click", () => {
+  randomizeColor()
 });
 
 document.body.onkeyup = (e)=>{
   if(e.keyCode == 32){
-    for (let i = 0; i < 5; i++) {
-      const colorsArray = arrayOfColors();
-      if(changeLockIcon[i].classList.contains("true")){
-        hexCode[i].innerText = colorsArray[i];
-        colorDiv[i].style.backgroundColor = colorsArray[i];
-      }
-    }
+    randomizeColor()
   }
 }
 
@@ -87,12 +85,6 @@ saveBtn.addEventListener("click", ()=>{
   SavepopUpBackground.style.display = "block"
 })
 
-document.body.onkeyup = (e)=>{
-  if(e.keyCode == 83){
-    SavepopUpBackground.style.display = "block"
-  }
-}
-
 saveCloseBtn.addEventListener("click", ()=>{
   SavepopUpBackground.style.display = "none"
 })
@@ -104,3 +96,9 @@ libraryBtn.addEventListener("click", ()=>{
 libraryCloseBtn.addEventListener("click", ()=>{
   librarypopUpBackground.style.display = "none"
 })
+
+
+//change this once tha localStorage is ready
+ window.onload = () =>{
+  randomizeColor()
+ }
