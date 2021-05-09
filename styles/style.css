@@ -50,3 +50,20 @@
 .btn:hover {
     opacity: .8;
 }
+
+#clipBoardPopUp{
+    position: fixed;
+    display: none;
+    font-weight: bolder;
+    font-size: 20px;
+    flex-direction: column;
+    margin: 10px 39%;
+    padding-top: 17px;
+    text-align: center;
+    z-index: 1px;
+    height: 60px;
+    width: 300px;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid black;
+    border-radius: 5px;
+}

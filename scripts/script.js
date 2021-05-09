@@ -1,6 +1,7 @@
 const hexCode = document.querySelectorAll(".hex-code");
 const randomBtn = document.getElementById("random");
 const colorDiv = document.querySelectorAll(".color");
+const copyingPopUp = document.getElementById("clipBoardPopUp")
 
 const generateCode = () => {
   let randomColor = "";
@@ -33,5 +34,11 @@ randomBtn.addEventListener("click", () => {
 hexCode.forEach(oneHex =>{
   oneHex.addEventListener("click", ()=>{
     window.navigator.clipboard.writeText(oneHex.innerText)
+    copyingPopUp.style.display = "flex"
+    copyingPopUp.style.color = oneHex.innerText
+    setTimeout(()=>{
+        copyingPopUp.style.display = "none";
+    }, 1000);
   })
 })
+
