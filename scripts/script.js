@@ -47,6 +47,10 @@ randomBtn.addEventListener("click", () => {
 document.body.onkeyup = (e)=>{
   if(e.keyCode == 32){
     randomizeColor()
+  }else if(e.keyCode == 83){
+    saveBtn.onclick();
+  }else if(e.keyCode == 76){
+    libraryBtn.onclick();
   }
 }
 
@@ -81,21 +85,21 @@ const lockBackground = (locked)=>{
   }
 }
 
-saveBtn.addEventListener("click", ()=>{
+saveBtn.onclick = ()=>{
   SavepopUpBackground.style.display = "block"
-})
+}
 
-saveCloseBtn.addEventListener("click", ()=>{
+saveCloseBtn.onclick = ()=>{
   SavepopUpBackground.style.display = "none"
-})
+}   
 
-libraryBtn.addEventListener("click", ()=>{
+libraryBtn.onclick = ()=>{
   librarypopUpBackground.style.display = "block"
-})
+}
 
-libraryCloseBtn.addEventListener("click", ()=>{
+libraryCloseBtn.onclick = ()=>{
   librarypopUpBackground.style.display = "none"
-})
+}
 
 
 //change this once tha localStorage is ready
